@@ -37,10 +37,7 @@ return True
 
  def add_at_index(self, index, data) -> bool:
  if index < 0 or index >= self.count:
- return False
- if index == 0:
- return self.add_at_head(data)
- if index == self.count:
+
  return self.add_at_tail(data)
  new_node = Node(data)
  curr_node = self.head
@@ -92,7 +89,7 @@ def get(self, index) -> int:
  curr_node = curr_node.next
  return [curr_node.previous.data, curr_node.next.data]
 # Do not change the following code
-
+operations = []
 for specific_operation in input().split(','):
  operations.append(specific_operation.strip())
 input_data = input()

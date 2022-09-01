@@ -37,7 +37,10 @@ return True
 
  def add_at_index(self, index, data) -> bool:
  if index < 0 or index >= self.count:
-
+  return False
+ if index == 0:
+ return self.add_at_head(data)
+ if index == self.count:
  return self.add_at_tail(data)
  new_node = Node(data)
  curr_node = self.head

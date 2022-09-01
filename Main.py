@@ -6,7 +6,9 @@ class Node:
 
 class DoublyCircularLinkedList:
  def __init__(self):
-
+ self.count = 0
+ self.front = None
+ self.end = None
 
  def add_at_tail(self, data) -> bool:
  new_node = Node(data)
@@ -38,10 +40,7 @@ return True
  return False
  if index == 0:
  return self.add_at_head(data)
- if index == self.count:
- return self.add_at_tail(data)
- new_node = Node(data)
- curr_node = self.head
+
  for i in range(index):
  curr_node = curr_node.next
  new_node.previous = curr_node.previous

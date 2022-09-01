@@ -1,9 +1,8 @@
 class Node:
  def __init__(self, data=None):
-  self.data = data
+ self.data = data
  self.previous = self
  self.next = self
-
 class DoublyCircularLinkedList:
  def __init__(self):
  self.count = 0
@@ -13,7 +12,7 @@ class DoublyCircularLinkedList:
  def add_at_tail(self, data) -> bool:
  new_node = Node(data)
  if self.count > 0:
-        new_node.previous = self.end
+  new_node.previous = self.end
  self.end.next = new_node
  self.head.previous = new_node
  new_node.next = self.head
@@ -33,11 +32,11 @@ class DoublyCircularLinkedList:
  self.end = new_node
  self.head = new_node
  self.count += 1
-return True
+  return True
 
  def add_at_index(self, index, data) -> bool:
  if index < 0 or index >= self.count:
-  return False
+ return False
  if index == 0:
  return self.add_at_head(data)
  if index == self.count:
@@ -51,7 +50,7 @@ return True
  curr_node.previous.next = new_node
  curr_node.previous = new_node
  self.count += 1
- return True 
+ return True
 def get(self, index) -> int:
  if index < 0 or index >= self.count:
  return -1
@@ -73,7 +72,7 @@ def get(self, index) -> int:
  if index == self.count - 1:
  temp = self.end
  self.head.previous = temp.previous
-    temp.previous.next = self.head
+  temp.previous.next = self.head
  self.end = temp.previous
  self.count -= 1
  return True
@@ -90,8 +89,8 @@ def get(self, index) -> int:
  curr_node = self.head
  for ind in range(index):
  curr_node = curr_node.next
- return [curr_node.previous.data, curr_node.next.data]
-# Do not change the following code
+ return [curr_node.previous.data, curr_node.next.data
+         # Do not change the following code
 operations = []
 for specific_operation in input().split(','):
  operations.append(specific_operation.strip())
@@ -108,7 +107,7 @@ for item in input_data.split(', '):
  if letter.isnumeric():
  inner_list.append(int(letter))
  data.append(inner_list)
-    obj = DoublyCircularLinkedList()
+         obj = DoublyCircularLinkedList()
 result = []
 for i in range(len(operations)):
  if operations[i] == "add_at_head":
